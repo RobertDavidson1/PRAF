@@ -1,7 +1,8 @@
-import requests  # For downloading the NASDAQ listings file
-import pandas as pd  # To load and process the tabular ticker data
 from io import StringIO  # To treat raw text as a file for pandas
 from typing import List  # For type hinting
+
+import pandas as pd  # To load and process the tabular ticker data
+import requests  # For downloading the NASDAQ listings file
 
 
 class NasdaqFetcher:
