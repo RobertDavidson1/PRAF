@@ -12,3 +12,6 @@ __pycache__/
 
 # Ignore build script
 build_requirements.sh
+
+# Ignore dev folder 
+/dev
