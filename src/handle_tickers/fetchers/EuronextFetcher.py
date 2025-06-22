@@ -1,12 +1,13 @@
-from .SeleniumDriver import BaseSeleniumDriver  # For Selenium WebDriver automation
-from typing import List  # For type hinting
-import time  # For waiting for the download to complete
 import os  # For loading the downloaded CSV file
-import pandas as pd  # For handling the downloaded CSV data
+import time  # For waiting for the download to complete
+from typing import List  # For type hinting
 
+import pandas as pd  # For handling the downloaded CSV data
 from selenium.webdriver.common.by import By  # For locating elements
-from selenium.webdriver.support.ui import WebDriverWait  # For waiting for elements to load
 from selenium.webdriver.support import expected_conditions as EC  # For waiting conditions like element visibility, clickability, etc.
+from selenium.webdriver.support.ui import WebDriverWait  # For waiting for elements to load
+
+from .SeleniumDriver import BaseSeleniumDriver  # For Selenium WebDriver automation
 
 
 class EuronextFetcher:
@@ -35,13 +36,10 @@ class EuronextFetcher:
         # Click buttons in sequence: menu -> csv -> decimal -> go
         menu_button = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, MENU_BUTTON)))
         menu_button.click()
-
         csv_label = self.driver.find_element(By.CSS_SELECTOR, CSV_LABEL)
         csv_label.click()
-
         decimal_label = self.driver.find_element(By.CSS_SELECTOR, DECIMAL_LABEL)
         decimal_label.click()
-
         go_button = self.driver.find_element(By.CSS_SELECTOR, GO_BUTTON)
         go_button.click()
 
