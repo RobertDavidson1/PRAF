@@ -7,6 +7,8 @@ from selenium.webdriver.chrome.options import Options  # For configuring the Sel
 
 
 class BaseSeleniumDriver:
+    """Encapsulates Selenium setup and usage in a reusable class."""
+
     def __init__(self):
         self.download_dir = tempfile.mkdtemp(prefix="dl_")  # Generates a temporary directory for downloads.
         self.implicit_wait = 5  # Implicit wait for element searches.
@@ -48,6 +50,6 @@ class BaseSeleniumDriver:
         self.driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
     def quit(self):
-        """Clean up the driver"""
+        """Gracefully closes the WebDriver session and releases resources."""
         if self.driver:
-            self.driver.quit()
+            self.driver.quit()  # Ensures resources are released after use.
