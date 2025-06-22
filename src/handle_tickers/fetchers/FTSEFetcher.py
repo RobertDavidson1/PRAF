@@ -56,7 +56,7 @@ class FtseFetcher:
             self.driver.get(f"{BASE_URL}?page={PAGE_NUM}")
 
             # Random sleep to mimic human browsing behavior
-            time.sleep(random.uniform(3, 5))
+            time.sleep(random.uniform(2, 8))
 
             # Break if we've reached the last page
             if MAX_PAGE and PAGE_NUM >= MAX_PAGE:
