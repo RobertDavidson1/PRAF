@@ -1,11 +1,12 @@
-from .SeleniumDriver import BaseSeleniumDriver  # For Selenium WebDriver automation
-import time  # For waiting between page loads
 import random  # For adding randomness to wait times
+import time  # For waiting between page loads
+from typing import List  # For type hinting
 
 from selenium.webdriver.common.by import By  # For locating elements
 from selenium.webdriver.support import expected_conditions as EC  # For waiting conditions like element visibility, clickability, etc.
 from selenium.webdriver.support.ui import WebDriverWait  # For waiting for elements to load
-from typing import List  # For type hinting
+
+from .SeleniumDriver import BaseSeleniumDriver  # For Selenium WebDriver automation
 
 
 class FtseFetcher:
